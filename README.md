@@ -68,6 +68,8 @@ The script generates a CRT-RSA key pair, where `n` is 2000 bits, `e` is 1000 bit
 #### Solution
 Take 4th root of `m // 1337` may get an approximation of `k`, then search in a small range, for each candidate `k_bar`, take 3th root of `(m - 1337 * k_bar ** 4) // 7331` to get an approximation of `l`, then search again and use `m` to determine `l` and `k`. As `k * p - k = e * dp - 1`, we can recover `p`, then decrypt flag.  
 
+
+<a id="ezRSA+"></a>
 ### ezRSA+
 Category: Crypto  
 Difficulty: ★★☆  
@@ -115,7 +117,7 @@ The PoW requires us to find a 4-byte phrase whose sha256 digest match the given 
 <a id="0CTF/TCTF-2021-Quals"></a>
 
 ## 0CTF/TCTF 2021 Quals
-
+<a id="zer0lfsr-"></a>
 ### zer0lfsr-
 Category: **Crypto**  
 Difficulty: ★★  
@@ -143,7 +145,8 @@ Most teams choose to attack Generator1 and Generator3.
 - Approch 1: Use z3
 - Approch 2: See [rkm's writeup](https://rkm0959.tistory.com/229?category=765103) for details 
 
-### zer0lfsr+
+<a id="zer0lfsr+"></a> 
+###  zer0lfsr+
 Category: **Crypto**  
 Difficulty: ★★★★  
 Solved: **2 / 464**  
@@ -158,6 +161,8 @@ The three generators remain unchanged. But we are given 20000 bytes from the maj
 #### Solution
 
 Please check [rkm's writeup](https://rkm0959.tistory.com/229?category=765103) for details.
+
+<a id="zer0lfsr++"></a>
 
 ### zer0lfsr++
 Category: **Crypto**  
