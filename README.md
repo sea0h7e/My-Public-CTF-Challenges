@@ -85,12 +85,12 @@ Same as **ezRSA**, but no magic numebr `m`, and we get the lowest 12 bits of bot
 #### Solution
 
 - Approch 1: After some arithmetic, we have `e * e * X + e * Y + Z = W * n`, where `X = dp * dq`,`Y = dp * (l - 1) + dq * (k - 1)`, `Z = (k - 1) * (l - 1)`, `W = k * l`.  Notice that `X, Y, Z, W` are small enough, so we can construct a lattice where the first column is `[n, -e^2, -e]`, then apply LLL to get `k` and `l`, which leads to factor `n`. 
-- Approch 2: Notice `dp` and `dq` are small enough, we may apply [Wiener's attack](https://en.wikipedia.org/wiki/Wiener's_attack), to get `X = dp * dq` from the continued fraction of `e * e / N`. Then we may guess `dp` from the factors of `X`, and recover `p` via `GCD(pow(pow(2, e, n), dp, n) - 2, n)` .
+- Approch 2: Notice `dp` and `dq` are small enough, we may apply [Wiener's attack](https://en.wikipedia.org/wiki/Wiener's_attack), to get `X = dp * dq` (for data in this task, `X = dp * dq // 3`) from the continued fraction of `e * e / N`. Then we may guess `dp` from the factors of `X`, and recover `p` via `GCD(pow(pow(2, e, n), dp, n) - 2, n)` .
 
 - Approch 3: Both the above methods are unintended, intended solution involves a Partial Key Exposure attack on CRT-RSA [[1]](#ezRSA-ref1) or a small CRT-Exponent attack (slower) [[2]](#ezRSA-ref2).
 
 **Reference**  
-<a id="ezRSA-ref1">[1]</a> May, Alexander, Julian Nowakowski, and Santanu Sarkar. "Partial Key Exposure Attack on Short Secret Exponent CRT-RSA.
+<a id="ezRSA-ref1">[1]</a> May, Alexander, Julian Nowakowski, and Santanu Sarkar. "Partial Key Exposure Attack on Short Secret Exponent CRT-RSA.  
 <a id="ezRSA-ref2">[2]</a> Takayasu, Atsushi, Yao Lu, and Liqiang Peng. "Small CRT-exponent RSA revisited." Journal of Cryptology 32.4 (2019): 1337-1382.
 
 ### halfhalf
