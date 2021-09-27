@@ -3,17 +3,18 @@ This is the repository of some CTF challenges I made, maybe including the source
 
 ## **ToC**
 
-* [0CTF/TCTF 2021 Finals](#0CTF/TCTF 2021 Finals)
+- [0CTF/TCTF 2021 Finals](#0CTF/TCTF-2021-Finals)
   - [ezMat](#ezMat)
   - [ezHash](#ezHash)
   - [ezRSA](#ezRSA)
   - [ezRSA+](#ezRSA+)
   - [halfhalf](#halfhalf)
-* [0CTF/TCTF 2021 Quals](#0CTF/TCTF 2021 Quals)
+- [0CTF/TCTF 2021 Quals](#0CTF/TCTF-2021-Quals)
   - [zer0lfsr-](#zer0lfsr-)
   - [zer0lfsr+](#zer0lfsr+)
   - [zer0lfsr++](#zer0lfsr++)
 
+<a id="0CTF/TCTF-2021-Finals"></a>
 ## 0CTF/TCTF 2021 Finals
 
 ### ezMat
@@ -110,6 +111,8 @@ The PoW requires us to find a 4-byte phrase whose sha256 digest match the given 
 
 - I deployed this challenge with xinetd, due to a mistake in the wrapper, the program is executed under root directory, so it can't read the flag from file. Thanks @FORMALIN for pointing out this.
 - @RBTree tells me the 60s time limitation is too tight, and he asks to increase it. But the source code of this challenge is lost, due to a VM broken, so the only way is to patch the binary. And he quickly finds the location of the corresponding parameters, then I patch it from 60s to 200s. Thanks RBTree's help. 
+
+<a id="0CTF/TCTF-2021-Quals"></a>
 
 ## 0CTF/TCTF 2021 Quals
 
