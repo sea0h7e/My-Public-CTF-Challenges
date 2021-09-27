@@ -3,13 +3,13 @@ This is the repository of some CTF challenges I made, maybe including the source
 
 ## **ToC**
 
-- [0CTF/TCTF 2021 Finals](#0CTF/TCTF 2021 Finals)
+* [0CTF/TCTF 2021 Finals](#0CTF/TCTF 2021 Finals)
   - [ezMat](#ezMat)
   - [ezHash](#ezHash)
   - [ezRSA](#ezRSA)
   - [ezRSA+](#ezRSA+)
   - [halfhalf](#halfhalf)
-- [0CTF/TCTF 2021 Quals](#0CTF/TCTF 2021 Quals)
+* [0CTF/TCTF 2021 Quals](#0CTF/TCTF 2021 Quals)
   - [zer0lfsr-](#zer0lfsr-)
   - [zer0lfsr+](#zer0lfsr+)
   - [zer0lfsr++](#zer0lfsr++)
@@ -17,10 +17,10 @@ This is the repository of some CTF challenges I made, maybe including the source
 ## 0CTF/TCTF 2021 Finals
 
 ### ezMat
-Category: **Crypto**
-Difficulty: ★
-Solved: **12 / 12**
-Tag: **Matrix, Linear Algebra**
+Category: **Crypto**  
+Difficulty: ★  
+Solved: **12 / 12**  
+Tag: **Matrix, Linear Algebra**  
 
 #### Details
 
@@ -34,10 +34,10 @@ The ciphertext computes as `E = L_inv * S * X = U * X = U * (A + R)`, we know `E
 Notice that `U` is a triangular matrix, and there are lots of zero elements in `A`, thus we may solve linear equations to recover most elements in `A`,  then bruteforce the remaining bytes according to the given sha256 digest.
 
 ### ezHash
-Category: Crypto
-Difficulty: ★★★☆
-Solved: **3 / 12**
-Tag: **Matrix, LPS Graph**
+Category: Crypto  
+Difficulty: ★★★☆  
+Solved: **3 / 12**  
+Tag: **Matrix, LPS Graph**  
 
 #### Details
 
@@ -49,14 +49,14 @@ The server will generate a random matrix `X` per connection, we have 10 seconds 
 #### Solution
 In fact, the algorithm is a hash function based on LPS graph. This paper [[1]](#ezHash-ref1) describes a preimage attack, just implement it.
 
-**Reference**
+**Reference**  
 <a id="ezHash-ref1">[1]</a> Petit, Christophe, Kristin Lauter, and Jean-Jacques Quisquater. "Full cryptanalysis of LPS and Morgenstern hash functions." *International Conference on Security and Cryptography for Networks*. Springer, Berlin, Heidelberg, 2008.
 
 ### ezRSA
-Category: Crypto
-Difficulty: ★★
-Solved: **11 / 12**
-Tag: **RSA, Hint**
+Category: Crypto  
+Difficulty: ★★  
+Solved: **11 / 12**  
+Tag: **RSA, Hint**  
 
 #### Details
 
@@ -68,10 +68,10 @@ The script generates a CRT-RSA key pair, where `n` is 2000 bits, `e` is 1000 bit
 Take 4th root of `m // 1337` may get an approximation of `k`, then search in a small range, for each candidate `k_bar`, take 3th root of `(m - 1337 * k_bar ** 4) // 7331` to get an approximation of `l`, then search again and use `m` to determine `l` and `k`. As `k * p - k = e * dp - 1`, we can recover `p`, then decrypt flag.  
 
 ### ezRSA+
-Category: Crypto
-Difficulty: ★★☆
-Solved:  **6 / 12**
-Tag: **RSA, Lattice, Continued Fraction**
+Category: Crypto  
+Difficulty: ★★☆  
+Solved:  **6 / 12**  
+Tag: **RSA, Lattice, Continued Fraction**  
 
 #### Details
 
@@ -86,15 +86,15 @@ Same as **ezRSA**, but no magic numebr `m`, and we get the lowest 12 bits of bot
 
 - Approch 3: Both the above methods are unintended, intended solution involves a Partial Key Exposure attack on CRT-RSA [[1]](#ezRSA-ref1) or a small CRT-Exponent attack (slower) [[2]](#ezRSA-ref2).
 
-**Reference**
+**Reference**  
 <a id="ezRSA-ref1">[1]</a> May, Alexander, Julian Nowakowski, and Santanu Sarkar. "Partial Key Exposure Attack on Short Secret Exponent CRT-RSA.
 <a id="ezRSA-ref2">[2]</a> Takayasu, Atsushi, Yao Lu, and Liqiang Peng. "Small CRT-exponent RSA revisited." Journal of Cryptology 32.4 (2019): 1337-1382.
 
 ### halfhalf
-Category: Reverse
-Difficulty: ★★☆
-Solved: **7 / 12**
-Tag: **Rust, Jacobi Symbol**
+Category: Reverse  
+Difficulty: ★★☆  
+Solved: **7 / 12**  
+Tag: **Rust, Jacobi Symbol**  
 
 #### Details
 
@@ -114,11 +114,10 @@ The PoW requires us to find a 4-byte phrase whose sha256 digest match the given 
 ## 0CTF/TCTF 2021 Quals
 
 ### zer0lfsr-
-
-Category: **Crypto**
-Difficulty: ★★
-Solved: **35 / 464**
-Tag: **LFSR, NFSR, Z3**
+Category: **Crypto**  
+Difficulty: ★★  
+Solved: **35 / 464**  
+Tag: **LFSR, NFSR, Z3**  
 
 #### Details
 
@@ -142,11 +141,10 @@ Most teams choose to attack Generator1 and Generator3.
 - Approch 2: See [rkm's writeup](https://rkm0959.tistory.com/229?category=765103) for details 
 
 ### zer0lfsr+
-
-Category: **Crypto**
-Difficulty: ★★★★
-Solved: **2 / 464**
-Tag: **LFSR, NFSR, FCA**
+Category: **Crypto**  
+Difficulty: ★★★★  
+Solved: **2 / 464**  
+Tag: **LFSR, NFSR, FCA**  
 
 #### Details
 
@@ -159,11 +157,10 @@ The three generators remain unchanged. But we are given 20000 bytes from the maj
 Please check [rkm's writeup](https://rkm0959.tistory.com/229?category=765103) for details.
 
 ### zer0lfsr++
-
-Category: **Crypto**
-Difficulty: ★★★★★
-Solved: **1 / 464**
-Tag: **LFSR, NFSR, FCA**
+Category: **Crypto**  
+Difficulty: ★★★★★  
+Solved: **1 / 464**  
+Tag: **LFSR, NFSR, FCA**  
 
 #### Details
 
@@ -177,5 +174,5 @@ Same as **zer0lfsr+**, but there are no KDF, three initial states are independen
 - FCA attack recover the LFSR state of Generator2 and use the hint to get the NFSR state of Generator2. 
 - Similar attack in [[1]](#zer0lfsr-ref1) to recover full state of Generator1.
 
-**Reference**
+**Reference**  
 <a id="#zer0lfsr-ref1">[1]</a> Berbain, Côme, Henri Gilbert, and Alexander Maximov. "Cryptanalysis of grain." International Workshop on Fast Software Encryption. Springer, Berlin, Heidelberg, 2006.
