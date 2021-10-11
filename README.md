@@ -84,10 +84,10 @@ Same as **ezRSA**, but no magic numebr `m`, and we get the lowest 12 bits of bot
 
 #### Solution
 
-- Approch 1: After some arithmetic, we have `e * e * X + e * Y + Z = W * n`, where `X = dp * dq`,`Y = dp * (l - 1) + dq * (k - 1)`, `Z = (k - 1) * (l - 1)`, `W = k * l`.  Notice that `X, Y, Z, W` are small enough, so we can construct a lattice where the first column is `[n, -e^2, -e]`, then apply LLL to get `k` and `l`, which leads to factor `n`. 
-- Approch 2: Notice `dp` and `dq` are small enough, we may apply [Wiener's attack](https://en.wikipedia.org/wiki/Wiener's_attack), to get `X = dp * dq` (for data in this task, `X = dp * dq // 3`) from the continued fraction of `e * e / N`. Then we may guess `dp` from the factors of `X`, and recover `p` via `GCD(pow(pow(2, e, n), dp, n) - 2, n)` .
+- Approach 1: After some arithmetic, we have `e * e * X + e * Y + Z = W * n`, where `X = dp * dq`,`Y = dp * (l - 1) + dq * (k - 1)`, `Z = (k - 1) * (l - 1)`, `W = k * l`.  Notice that `X, Y, Z, W` are small enough, so we can construct a lattice where the first column is `[n, -e^2, -e]`, then apply LLL to get `k` and `l`, which leads to factor `n`. 
+- Approach 2: Notice `dp` and `dq` are small enough, we may apply [Wiener's attack](https://en.wikipedia.org/wiki/Wiener's_attack), to get `X = dp * dq` (for data in this task, `X = dp * dq // 3`) from the continued fraction of `e * e / N`. Then we may guess `dp` from the factors of `X`, and recover `p` via `GCD(pow(pow(2, e, n), dp, n) - 2, n)` .
 
-- Approch 3: Both the above methods are unintended, intended solution involves a Partial Key Exposure attack on CRT-RSA [[1]](#ezRSA-ref1) or a small CRT-Exponent attack (slower) [[2]](#ezRSA-ref2).
+- Approach 3: Both the above methods are unintended, intended solution involves a Partial Key Exposure attack on CRT-RSA [[1]](#ezRSA-ref1) or a small CRT-Exponent attack (slower) [[2]](#ezRSA-ref2).
 
 **Reference**  
 <a id="ezRSA-ref1">[1]</a> May, Alexander, Julian Nowakowski, and Santanu Sarkar. "Partial Key Exposure Attack on Short Secret Exponent CRT-RSA.  
@@ -97,7 +97,7 @@ Same as **ezRSA**, but no magic numebr `m`, and we get the lowest 12 bits of bot
 Category: Reverse  
 Difficulty: ★★☆  
 Solved: **7 / 12**  
-Tag: **Rust, Jacobi Symbol**  
+Tag: **Rust, Jacobi Symbol**
 
 #### Details
 
@@ -126,7 +126,7 @@ Tag: **LFSR, NFSR, Z3**
 
 #### Details
 
-[Source](0CTF-TCTF-2021-Finals/zer0lfsr-/)
+[Source](0CTF-TCTF-2021-Quals/zer0lfsr-/)
 
 There are three generators composed of LFSR or NFSR.
 
@@ -142,8 +142,8 @@ The output functions of each generator are filted, which are not linear from its
 
 Most teams choose to attack Generator1 and Generator3.
 
-- Approch 1: Use z3
-- Approch 2: See [rkm's writeup](https://rkm0959.tistory.com/229?category=765103) for details 
+- Approach 1: Use z3
+- Approach 2: See [rkm's writeup](https://rkm0959.tistory.com/229?category=765103) for details 
 
 <a id="zer0lfsr+"></a> 
 ###  zer0lfsr+
@@ -154,7 +154,7 @@ Tag: **LFSR, NFSR, FCA**
 
 #### Details
 
-[Source](0CTF-TCTF-2021-Finals/zer0lfsr+/)
+[Source](0CTF-TCTF-2021-Quals/zer0lfsr+/)
 
 The three generators remain unchanged. But we are given 20000 bytes from the majority function of the output of three generators, and are required to recover all the initial states within 100s. The initial state of Generator2 is derived from Generator1 with KDF function, the initial state of Generator3 is derived from Generator2 with KDF function.
 
@@ -172,7 +172,7 @@ Tag: **LFSR, NFSR, FCA**
 
 #### Details
 
-[Source](0CTF-TCTF-2021-Finals/zer0lfsr++/)
+[Source](0CTF-TCTF-2021-Quals/zer0lfsr++/)
 
 Same as **zer0lfsr+**, but there are no KDF, three initial states are independent. And we have a hint, can get the highest 16 bits of one of the three state.
 
@@ -183,4 +183,4 @@ Same as **zer0lfsr+**, but there are no KDF, three initial states are independen
 - Similar attack in [[1]](#zer0lfsr-ref1) to recover full state of Generator1.
 
 **Reference**  
-<a id="#zer0lfsr-ref1">[1]</a> Berbain, Côme, Henri Gilbert, and Alexander Maximov. "Cryptanalysis of grain." International Workshop on Fast Software Encryption. Springer, Berlin, Heidelberg, 2006.
+<a id="#zer0lfsr-ref1">[1]</a> Berbain, Côme, Henri Gilbert, and Alexander Maximov. "Cryptanalysis of grain." International Workshop on Fast Software Encryption. Springer, Berlin, Heidelberg, 2006.  
