@@ -2,6 +2,9 @@
 This is the repository of some CTF challenges I made, maybe including the source code and solution.
 
 ## **ToC**
+- [AliyunCTF 2023](#AliyunCTF-2023)
+  - [BabyPRNG](#BabyPRNG)
+  - [BabyAuth](#BabyAuth)
 - [0CTF/TCTF 2022](#0CTF/TCTF-2022)
   - [real magic dlog](#real-magic-dlog)
   - [Leopard](#Leopard)
@@ -18,6 +21,39 @@ This is the repository of some CTF challenges I made, maybe including the source
   - [zer0lfsr-](#zer0lfsr-)
   - [zer0lfsr+](#zer0lfsr+)
   - [zer0lfsr++](#zer0lfsr++)
+
+<a id="AliyunCTF-2023"></a>
+## AliyunCTF 2023
+
+### BabyPRNG
+Category: **Crypto**  
+Difficulty: ★★★   
+Solved: **2 / 109**  
+Tag: **PRNG, Elliptic Curve, Lattice**  
+
+#### Details
+
+[Source](AliyunCTF-2023/BabyPRNG/)
+
+#### Solution
+
+[中文](AliyunCTF-2023/BabyPRNG/writeup.pdf)
+[English](AliyunCTF-2023/BabyPRNG/writeup_EN.pdf)
+
+### BabyAuth
+Category: **Crypto**  
+Difficulty: ★★★☆   
+Solved: **4 / 109**  
+Tag: **CBC, DSA, Lattice**  
+
+#### Details
+
+[Source](AliyunCTF-2023/BabyAuth/)
+
+#### Solution
+
+[中文](AliyunCTF-2023/BabyAuth/writeup.pdf)
+[English](AliyunCTF-2023/BabyAuth/writeup_EN.pdf)
 
 
 <a id="0CTF/TCTF-2022"></a>
