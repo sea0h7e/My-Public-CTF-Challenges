@@ -2,6 +2,10 @@
 This is the repository of some CTF challenges I made, maybe including the source code and solution.
 
 ## **ToC**
+- [AliyunCTF 2024](#AliyunCTF-2024)
+  - [BabyDH 1](#BabyDH-1)
+  - [BabyDH 2](#BabyDH-2)
+  - [Doctored Dobbertin v2](#Doctored-Dobbertin-v2)
 - [0CTF/TCTF 2023](#0CTF/TCTF-2023)
   - [Double RSA 0/1/2/3](#Double-RSA)
   - [blocky-4.5 lite](#blocky-4.5-lite)
@@ -27,6 +31,57 @@ This is the repository of some CTF challenges I made, maybe including the source
   - [zer0lfsr+](#zer0lfsr+)
   - [zer0lfsr++](#zer0lfsr++)
 
+<a id="AliyunCTF-2024"></a>
+
+## AliyunCTF 2024
+
+<a id="BabyDH-1"></a>
+### BabyDH 1
+Category: **Crypto**  
+Difficulty: ★★   
+Solved: **8 / 94**  
+Tag: **Diffie–Hellman, Elliptic Curve, Coppersmith**  
+
+#### Details
+
+[Source](AliyunCTF-2024/BabyDH-1/)
+
+#### Solution
+
+[中文](AliyunCTF-2024/BabyDH-1/writeup.pdf)
+[English](AliyunCTF-2024/BabyDH-1/writeup_EN.pdf)
+
+<a id="BabyDH-2"></a>
+### BabyDH 2
+Category: **Crypto**  
+Difficulty: ★★★   
+Solved: **5 / 94**  
+Tag: **Diffie–Hellman, Elliptic Curve, ECHNP, Coppersmith**  
+
+#### Details
+
+[Source](AliyunCTF-2024/BabyDH-2/)
+
+#### Solution
+
+[中文](AliyunCTF-2024/BabyDH-2/writeup.pdf)
+[English](AliyunCTF-2024/BabyDH-2/writeup_EN.pdf)
+
+<a id="Doctored-Dobbertin-v2"></a>
+### Doctored Dobbertin v2
+Category: **Crypto**  
+Difficulty: ★★☆   
+Solved: **2 / 94**  
+Tag: **Tweakable Block Cipher, AES, Backdoor**  
+
+#### Details
+
+[Source](AliyunCTF-2024/Doctored-Dobbertin-v2/)
+
+#### Solution
+
+[中文](AliyunCTF-2024/Doctored-Dobbertin-v2/writeup.pdf)
+[English](AliyunCTF-2024/Doctored-Dobbertin-v2/writeup_EN.pdf)
 
 <a id="0CTF/TCTF-2023"></a>
 
